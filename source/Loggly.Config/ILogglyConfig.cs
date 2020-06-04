@@ -26,6 +26,7 @@ namespace Loggly.Config
         string Account { get; set; }
         string Username { get; set; }
         string Password { get; set; }
+        string AuthToken { get; set; }
     }
     public interface ILogglyConfig
     {

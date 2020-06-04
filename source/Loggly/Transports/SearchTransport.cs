@@ -21,11 +21,14 @@ namespace Loggly
         {
             _config = config;
             _httpClient=new HttpClient();
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+
+            _httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrWhiteSpace(config.AuthToken)
+                ? new AuthenticationHeaderValue(
                     "Basic",
                     Convert.ToBase64String(
                         Encoding.ASCII.GetBytes(
-                        string.Format("{0}:{1}", config.Username, config.Password))));
+                        string.Format("{0}:{1}", config.Username, config.Password))))
+                : new AuthenticationHeaderValue("Bearer", config.AuthToken);
         }
         public async Task<SearchResponse> Search(SearchQuery query)
         {
@@ -57,7 +60,7 @@ namespace Loggly
             try
             {
                 var searchPathAndQuery = GetUrl(endPoint, parameters);
-                
+
                 using (var response = await _httpClient.GetAsync(searchPathAndQuery).ConfigureAwait(false))
                 {
                     var isFieldResponseResultExpected = typeof(T) == typeof(FieldResponse);
