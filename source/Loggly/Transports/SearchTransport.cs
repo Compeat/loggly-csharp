@@ -22,13 +22,13 @@ namespace Loggly
             _config = config;
             _httpClient=new HttpClient();
 
-            _httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrWhiteSpace(config.AuthToken)
+            _httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrWhiteSpace(config.AuthorizationToken)
                 ? new AuthenticationHeaderValue(
                     "Basic",
                     Convert.ToBase64String(
                         Encoding.ASCII.GetBytes(
                         string.Format("{0}:{1}", config.Username, config.Password))))
-                : new AuthenticationHeaderValue("Bearer", config.AuthToken);
+                : new AuthenticationHeaderValue("Bearer", config.AuthorizationToken);
         }
         public async Task<SearchResponse> Search(SearchQuery query)
         {

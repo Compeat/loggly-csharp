@@ -1048,20 +1048,20 @@ namespace Loggly.Config
         }
         #endregion
         
-        #region AuthToken Property
+        #region AuthorizationToken Property
         /// <summary>
-        /// The XML name of the <see cref="AuthToken"/> property.
+        /// The XML name of the <see cref="AuthorizationToken"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.2.0")]
-        internal const string AuthTokenPropertyName = "authToken";
+        internal const string AuthTokenPropertyName = "authorizationToken";
         
         /// <summary>
-        /// Gets or sets the AuthToken.
+        /// Gets or sets the AuthorizationToken.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.2.0")]
-        [global::System.ComponentModel.DescriptionAttribute("The AuthToken.")]
+        [global::System.ComponentModel.DescriptionAttribute("The AuthorizationToken.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Loggly.Config.SearchAppConfig.AuthTokenPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual string AuthToken
+        public virtual string AuthorizationToken
         {
             get
             {

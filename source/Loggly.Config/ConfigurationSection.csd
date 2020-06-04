@@ -158,7 +158,7 @@
             <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
           </type>
         </attributeProperty>
-        <attributeProperty name="AuthToken" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="authToken" isReadOnly="false">
+        <attributeProperty name="AuthorizationToken" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="authorizationToken" isReadOnly="false">
           <type>
             <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/Single" />
           </type>
